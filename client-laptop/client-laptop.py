@@ -18,11 +18,21 @@ def readKey():
 		termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
 	return ch
 
+# Default IP address of the robot (DHCP reservation)
+ipAddress = "10.1.1.9"
+
+# Read the command line argument for the IP address of the server
+if len(sys.argv) > 2:
+	print("Usage: client-laptop.py [IP-addr-of-robot]")
+	sys.exit(1)
+elif len(sys.argv) == 2:
+	ipAddress = sys.argv[1]
+	print("Using specified IP address: {}".format(ipAddress))
+else:
+	print("Using default IP address: {}".format(ipAddress))
+
 # Create a socket
 clientSocket = socket.socket()
-
-# IP address of the robot
-ipAddress = "192.168.1.98"
 
 # Port number to connect to
 port = 12345

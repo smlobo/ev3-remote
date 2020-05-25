@@ -12,6 +12,6 @@ Python code to control a Lego EV3 from a laptop
 % ./client-laptop.py  
 ...  
 Connected to robot: ... : 12345
-</code>
+</code>  
 3) Press *i, j, k, l* to maneuver the robot _forward, left, backward, & right_ respectively.  
 Press *q* to quit.
